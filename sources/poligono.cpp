@@ -11,13 +11,6 @@
 #define NENHUMA -1
 #endif
 
-
-Poligono::Poligono(){
-    pontos = new Ponto[QTD_PADRAO_PONTOS_100];
-    qtd_pontos_maxima = QTD_PADRAO_PONTOS_100;
-    qtd_pontos = 0;
-}
-
 Poligono::Poligono(int n){
     pontos = new Ponto[n];
     qtd_pontos_maxima = n;
@@ -69,10 +62,16 @@ void Poligono::transladar(float a, float b){
         pontos[i].transladar(a, b);
 }
 
-void Poligono::rotacionar(float teta){
+void Poligono::rotacionar(float teta, Ponto p){
+    p = -p;
+    transladar(p.x(), p.y());
+
     int i;
     for (i = 0; i < qtd_pontos; i++)
         pontos[i].rotacionar(teta);
+
+    p = -p;
+    transladar(p.x(), p.y());
 }
 
 float Poligono::area(void){

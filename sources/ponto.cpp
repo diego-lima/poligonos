@@ -9,11 +9,6 @@ float grau(float radianos){
     return radianos * M_PI / 180;
 }
 
-Ponto::Ponto(){
-    _x = 0;
-    _y = 0;
-}
-
 Ponto::Ponto(float a, float b){
     _x = a;
     _y = b;
@@ -61,6 +56,11 @@ Ponto Ponto::sub(Ponto p){
 Ponto Ponto::operator - (Ponto v){
   Ponto ret(_x, _y);
   ret = ret.sub(v);
+  return(ret);
+}
+
+Ponto Ponto::operator - (){
+  Ponto ret(-1*_x,-1* _y);
   return(ret);
 }
 

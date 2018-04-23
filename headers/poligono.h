@@ -4,6 +4,15 @@
 #include "headers/ponto.h"
 #include "headers/linha.h"
 
+#ifndef QTD_PADRAO_PONTOS_100
+#define QTD_PADRAO_PONTOS_100 100
+#endif
+
+/**
+ * @brief A classe Polígono
+ * @details Implementa o objeto Poligono, que pode ter inúmeros pontos
+ */
+
 class Poligono{
     private:
         int qtd_pontos; // Indica ate onde percorrer array de pontos (similar ao '\0' da string)
@@ -11,51 +20,89 @@ class Poligono{
         Ponto *pontos; // Array de pontos
 
     public:
-        // Construtor padrão, que aloca 100 pontos
-        Poligono();
 
-        // Construtor que recebe quantidade de pontos do polígono para alocar
-        Poligono(int n);
+        /**
+         * @brief Construtor da classe
+         * @param n quantidade de pontos para serem alocados
+         */
+        Poligono(int n = QTD_PADRAO_PONTOS_100);
 
-        // Destrutor da classe, que deleta [] os pontos
+        /**
+         * @brief destrutor da classe, que desaloca os pontos
+         */
         ~Poligono();
 
-        // Resgata a quantidade de pontos
+        /**
+         * @brief resgata a quantidade de pontos já fornecidos
+         * @return numero inteiro
+         */
         int quantidade_pontos(void);
 
-        // Recebe um ponto para ser adicionado à lista de pontos.
-        // Retorna true em caso de sucesso.
+        /**
+         * @brief Recebe um ponto para ser adicionado à lista de pontos.
+         * @param p ponto a ser adicionado
+         * @return true em caso de sucesso
+         */
         bool adicionar_ponto(Ponto p);
 
-        // Printa a sequência de pontos
+        /**
+         * @brief printa a sequência de pontos
+         */
         void print(void);
 
-        // Translada todos os pontos do polígono
+        /**
+         * @brief Translada todos os pontos do polígono
+         * @param a o movimento na coordenada X
+         * @param b o movimento na coordenada Y
+         */
         void transladar(float a, float b);
 
-        // Rotaciona todos os pontos do polígono em relação à origem (sentido anti-horário)
-        void rotacionar(float teta);
+        /**
+         * @brief Rotaciona todos os pontos do polígono.
+         * @details  em relação ao ponto fornecido (por padrão é a origem, sentido anti-horário)
+         * @param teta ângulo em graus a se rotacionar no sentido anti-horário
+         * @param p ponto de referência para a rotação
+         */
+        void rotacionar(float teta, Ponto p = Ponto(0,0));
 
-        // Extra: Em caso de polígonos que se cruzam em si mesmos, a função recursivamente
-        // calcula as áreas de cada subpolígono.
-        // Retorna a área do poligono total.
-        // Polígonos com menos de 3 pontos não têm área.
+        /**
+         * @brief Calcula a área do polígono usando Shoelace.
+         * @details Funciona para polígonos côncavos, convexos e até mesmo polígonos
+         * que se interceptam em si mesmos. No caso desses últimos, a função recursivamente
+         * subdivide o polígono em polígonos menores, que não se interceptam em si mesmos
+         * (denominados polígonos simples), e aí retorna a soma das áreas desses subpolígonos.
+         * @return a área total do polígono
+         */
         float area(void);
 
-        // Extra: determina se um ponto é um dos que formam o poligono
+        /**
+         * @brief Determina se um ponto fornecido está na lista de pontos do poligono
+         * @param p o Ponto a ser constatado
+         * @return verdadeiro ou falso
+         */
         bool contem_ponto(Ponto p);
 
-        // Extra: determina se o poligono se intercepta consigo mesmo
-        // Retorna o indice da primeira linha a se interceptar com outra
-        // Retorna também o primeiro ponto de interseção encontrado
-        // Retorna -1 caso nao exista interseção entre linhas
+        /**
+         * @brief determina se o poligono se intercepta consigo mesmo
+         * @param p um Ponto que servirá apenas para retornar o primeiro ponto
+         * de auto-interseção do polígono
+         * @return o índice da primeira linha do polígono a se interceptar com outra.
+         * Retorna -1 caso não exista interseção (polígono não se intercepta).
+         */
         int self_intersect(Ponto *p);
 
-        // Extra: permite adicionar pontos ao polígono com operador <<
-        // poligono << Ponto(0,0);
+        /**
+         * @brief Viabiliza a adição de pontos com o operador <<
+         * @details Torna válida a sintaxe "poligono << Ponto(x1,y1) << Ponto(x2,y2);"
+         * @param poligono
+         * @param ponto
+         * @return o polígono com os pontos já adicionados, acumulados.
+         */
         friend Poligono& operator<<(Poligono& poligono, Ponto p);
 
-        // Extra: liberar acesso para classe que mostra polígono na tela
+        /**
+         * @brief Extra: liberar acesso para classe que mostra polígono na tela
+         */
         friend class Mostrador;
 };
 
