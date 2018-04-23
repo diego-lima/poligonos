@@ -3,6 +3,11 @@
 
 #include "headers/ponto.h"
 
+/**
+ * @brief A classe Linha
+ * @details Utilizada para detecção de interseção nos polígonos
+ */
+
 class Linha{
     private:
         Ponto pontos[2];
@@ -10,19 +15,35 @@ class Linha{
     public:
         Linha();
 
+        /**
+         * @brief Construtor da classe
+         * @param p1 ponto inicial da linha
+         * @param p2 ponto final da linha
+         */
         Linha(Ponto p1, Ponto p2);
 
-        // Determina se a linha é limitada pelo ponto
+        /**
+         * @brief Determina se a linha é limitada pelo ponto
+         * @param p ponto a ser constatado
+         * @return verdadeiro ou falso
+         */
         bool limitada_por(Ponto p);
 
-        // Printa as coordenadas da linha
+        /**
+         * @brief Printa as coordenadas da linha
+         */
         void print(void);
 
+        /**
+         * @brief Determina o ponto de interseção entre duas linhas (segmentos de reta).
+         * @param l1 linha 1
+         * @param l2 linha 2
+         * @param ponto serve apenas para poder retornar o ponto de interseção entre as linhas, se houver
+         * @return verdadeiro caso haja interseção entre as linhas
+         */
         friend bool intersecao(Linha l1, Linha l2, Ponto *ponto);
 };
 
-// Determina o ponto de interseção entre duas linhas (segmentos de reta).
-// Retorna 0 se não houver interseção.
 bool intersecao(Linha l1, Linha l2, Ponto *ponto);
 
 #endif // LINHA_H

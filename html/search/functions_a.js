@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['transladar',['transladar',['../class_poligono.html#a48b40bd2284a5c7ee5253f2070052046',1,'Poligono::transladar()'],['../class_ponto.html#a889eadeeb819fa3056e0ad6c4ebf9aab',1,'Ponto::transladar()']]]
+  ['self_5fintersect',['self_intersect',['../class_poligono.html#a5d5ba5fd150f66f7bda85379f8940960',1,'Poligono']]],
+  ['sub',['sub',['../class_ponto.html#a29db0824c989d122fe33ee23eba176a2',1,'Ponto']]]
 ];

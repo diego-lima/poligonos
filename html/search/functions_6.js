@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['poligono',['Poligono',['../class_poligono.html#acb59a10d0ec3b91ddb247678fb38925e',1,'Poligono']]],
-  ['ponto',['Ponto',['../class_ponto.html#a1b107f06973cb6ea42f0683fa221c640',1,'Ponto']]],
-  ['print',['print',['../class_poligono.html#ad3c89ba600d1bbca1017b8032ae85db9',1,'Poligono::print()'],['../class_ponto.html#a3f2b45f2058cde3de7a976127fee5024',1,'Ponto::print()']]]
+  ['operator_2b',['operator+',['../class_ponto.html#ae2cb689d2613c8c2adf089f93115f6c4',1,'Ponto']]],
+  ['operator_2d',['operator-',['../class_ponto.html#affa80e0989479a3dae669372f7cbdbbb',1,'Ponto::operator-(Ponto p)'],['../class_ponto.html#a9c03b3de454489d1769113dece1f82f1',1,'Ponto::operator-()']]]
 ];

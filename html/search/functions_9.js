@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['self_5fintersect',['self_intersect',['../class_poligono.html#a5d5ba5fd150f66f7bda85379f8940960',1,'Poligono']]],
-  ['sub',['sub',['../class_ponto.html#a29db0824c989d122fe33ee23eba176a2',1,'Ponto']]]
+  ['retangulo',['Retangulo',['../class_retangulo.html#add43940ce37ace8154d41476625d0c17',1,'Retangulo']]],
+  ['rotacionar',['rotacionar',['../class_poligono.html#aae151435130fe2af8ca6071fde21deb9',1,'Poligono::rotacionar()'],['../class_ponto.html#a54930fe661c046b486072afecd41f101',1,'Ponto::rotacionar()']]]
 ];

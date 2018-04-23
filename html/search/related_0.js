@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['mostrador',['Mostrador',['../class_poligono.html#adab574eb962319ebb7cfb87cc7c5b0ae',1,'Poligono']]]
+  ['intersecao',['intersecao',['../class_linha.html#a1a2550b2c53123dcd12d69dcfce8760b',1,'Linha']]]
 ];
