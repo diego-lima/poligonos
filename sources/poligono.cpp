@@ -81,7 +81,7 @@ float Poligono::area(void){
 
     if (qtd_pontos < 3){
         printf("Area nula\n");
-        return 0;
+//        return 0;
     }
 
     // indice_intersecao será o índice da primeira linha em que foi detectada
@@ -97,11 +97,13 @@ float Poligono::area(void){
         for (i = 0; i < qtd_pontos - 1; i++){
             left = left + ( pontos[i].x() * pontos[i+1].y() );
         }
+        left = left + pontos[qtd_pontos-1].x() * pontos[0].y();
 
         // Do segundo ate o ultimo
-        for (i = 1; i < qtd_pontos; i++){
+        for (i = 1; i <= qtd_pontos - 1; i++){
             right = right + ( pontos[i].x() * pontos[i-1].y() );
         }
+        right = right + pontos[0].x() * pontos[qtd_pontos-1].y();
 
         // Area = (1/2) * |left - right|
         return 0.5 * abs(left - right);
@@ -163,8 +165,12 @@ int Poligono::self_intersect(Ponto *p){
     // Checar se algum par de linhas se intercepta
     for (i = 0; i < qtd_pontos; i++){
         for (j = i+1; j < qtd_pontos; j++){ // So verifica uma linha com as seguintes
-            if ( intersecao(l[i], l[j], p) && !contem_ponto(*p) )
+            if ( intersecao(l[i], l[j], p) && !contem_ponto(*p) ){
+                l[i].print();
+                l[j].print();
+                p->print();
                 return i;
+            }
         }
     }
 

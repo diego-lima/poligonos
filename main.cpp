@@ -32,6 +32,7 @@ int main(int argc, char *argv[]){
     //e recalcule a sua área. Compare-a com a área calculada antes da
     //transformação geométrica.
     retan.rotacionar(30, Ponto(2,-1.5) );
+    retan.print();
     printf("Area do retangulo depois da rotação: %.1f--->SÃO IGUAIS!\n", retan.area());
 
     printf("\n\n\n");

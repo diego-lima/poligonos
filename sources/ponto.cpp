@@ -9,6 +9,11 @@ float grau(float radianos){
     return radianos * M_PI / 180;
 }
 
+float trunc(float a, int places=1000){
+    //Trunca alguns dígitos de a, de acordo com places
+    return (float)((int)a*places)/places;
+}
+
 Ponto::Ponto(float a, float b){
     _x = a;
     _y = b;
@@ -86,7 +91,12 @@ void Ponto::print(void){
 }
 
 bool Ponto::igual(Ponto p){
-    if (_x == p.x() && _y == p.y())
+    //O que acontece abaixo é que estamos comparando X e Y dos pontos.
+    //A função trunc(truncar) é porque queremos considerar que pontos são iguais, mesmo
+    //se houver diferença depois da quarta casa decimal.
+    // int pl é de (decimal) places.
+    int pl=10000;
+    if (trunc(_x, pl) == trunc(p.x(), pl) && trunc(_y, pl) == trunc(p.y(), pl))
         return true;
     return false;
 }

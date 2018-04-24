@@ -115,6 +115,8 @@ class Ponto{
 
         /**
          * @brief Extra: determina se um ponto é igual a outro
+         * @details se as coordenadas dos pontos forem iguais até a quarta casa decimal,
+         * então os pontos são iguais.
          * @param p ponto a ser comparado
          * @return verdadeiro ou falso
          */
