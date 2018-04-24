@@ -67,16 +67,25 @@ $(function() {
 <div class="title">Mostrador Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>A classe <a class="el" href="class_mostrador.html" title="A classe Mostrador. ">Mostrador</a>.  
+ <a href="class_mostrador.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="mostrador_8h_source.html">mostrador.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a3feb6d1901d85d2d10b8c3e7fbdc3992"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mostrador.html#a3feb6d1901d85d2d10b8c3e7fbdc3992">Mostrador</a> (int argc, char *argv[], <a class="el" href="class_poligono.html">Poligono</a> poligono, bool enquadrar=false)</td></tr>
+<tr class="memdesc:a3feb6d1901d85d2d10b8c3e7fbdc3992"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recebe o poligono a ser mostrado através de um Area Chart do QT.  <a href="#a3feb6d1901d85d2d10b8c3e7fbdc3992">More...</a><br /></td></tr>
 <tr class="separator:a3feb6d1901d85d2d10b8c3e7fbdc3992"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad648b54d3f842b320318319aae40c051"><td class="memItemLeft" align="right" valign="top"><a id="ad648b54d3f842b320318319aae40c051"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setar_limites</b> (<a class="el" href="class_poligono.html">Poligono</a> *poligono, float *a, float *b, bool enquadrar)</td></tr>
+<tr class="memitem:ad648b54d3f842b320318319aae40c051"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mostrador.html#ad648b54d3f842b320318319aae40c051">setar_limites</a> (<a class="el" href="class_poligono.html">Poligono</a> *poligono, float *a, float *b, bool enquadrar)</td></tr>
+<tr class="memdesc:ad648b54d3f842b320318319aae40c051"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enquadra o poligono perto da origem e ajusta o alcance do gráfico para o desenho do polígono ficar grande.  <a href="#ad648b54d3f842b320318319aae40c051">More...</a><br /></td></tr>
 <tr class="separator:ad648b54d3f842b320318319aae40c051"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A classe <a class="el" href="class_mostrador.html" title="A classe Mostrador. ">Mostrador</a>. </p>
+<p>Serve para exibição de um gráfico de área na tela que mostra o contorno do polígono. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a3feb6d1901d85d2d10b8c3e7fbdc3992"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3feb6d1901d85d2d10b8c3e7fbdc3992">&#9670;&nbsp;</a></span>Mostrador()</h2>
 
@@ -114,6 +123,18 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setar_limites</b> (<a
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Recebe o poligono a ser mostrado através de um Area Chart do QT. </p>
+<p>os parâmetros argc e argv devem ser os mesmos passados na função main. "int main(int argc, char *argv[])".</p>
+<p>A exibição é feita com o area chart do QT. Como o area chart não é o mais adequado para exibição de polígonos quaisquer, essa exibição é defeituosa. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">argc</td><td>da main </td></tr>
+    <tr><td class="paramname">argv</td><td>da main </td></tr>
+    <tr><td class="paramname">poligono</td><td>o poligono a ser mostrado </td></tr>
+    <tr><td class="paramname">enquadrar</td><td>se deseja arrastar o polígono para a origem </td></tr>
+  </table>
+  </dd>
+</dl>
 <p>Código adaptado do exemplo 'areachart' do próprio website do Qt. site: <a href="https://doc.qt.io/qt-5.10/qtcharts-areachart-example.html">https://doc.qt.io/qt-5.10/qtcharts-areachart-example.html</a> Caso necessario: $ sudo apt install libgl1-mesa-dev</p>
 <p>[1]</p>
 <p>[1]</p>
@@ -126,6 +147,58 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setar_limites</b> (<a
 <p>[4]</p>
 <p>[5]</p>
 <p>[5] </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ad648b54d3f842b320318319aae40c051"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad648b54d3f842b320318319aae40c051">&#9670;&nbsp;</a></span>setar_limites()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Mostrador::setar_limites </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_poligono.html">Poligono</a> *&#160;</td>
+          <td class="paramname"><em>poligono</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>enquadrar</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enquadra o poligono perto da origem e ajusta o alcance do gráfico para o desenho do polígono ficar grande. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">poligono</td><td>sendo exibido </td></tr>
+    <tr><td class="paramname">a</td><td>alcance da horizontal do gráfico </td></tr>
+    <tr><td class="paramname">b</td><td>alcance da vertical do gráfico </td></tr>
+    <tr><td class="paramname">enquadrar</td><td>se a função deve puxar o polígono para perto da origem ou não </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
